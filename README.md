@@ -30,4 +30,4 @@ Both visualizations hold the same graphs; a map which represents the death count
   
 
 ## Cleaning in SQL
-In the third of Alex's videos we focused on cleaning a nashville housing dataset. I have uploaded all the cleaning queries to this repo, 
+In the third of Alex's videos we focused on cleaning a nashville housing dataset. I have uploaded all the cleaning queries to this repo. In summary, we made use of the `ALTER` and `UPDATE TABLE` functions, the `ISNULL()` function to suplement missing data, the `SUBSTRING()`, `CHARINDEX()`, `LEN()`, `REPLACE()` and `PARSENAME()` functions to split addresses into more useful columns, `CASE WHEN` statements to standardize a Boolean column, and the window function `ROW_NUMBER()` to identify and remove duplicate data.
