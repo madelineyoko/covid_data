@@ -1,5 +1,6 @@
 USE covid_data;
 
+-- Searching for the total amount of vaccinations in Canada per day
 SELECT 
 	location,
 	date,
@@ -8,6 +9,9 @@ FROM covid_vaccinations
 WHERE location = 'Canada'
 ORDER BY 2, 3
 
+
+
+-- Looking at new cases, deaths, and vaccinations in Canada per day
 SELECT
 	dea.location,
 	dea.date,
@@ -21,6 +25,8 @@ JOIN covid_vaccinations vac
 WHERE dea.location = 'Canada'
 ORDER BY 2
 
+
+-- -- Looking at new cases, deaths, and vaccinations by Continent per day
 SELECT 
 	dea.location,
 	dea.date,
@@ -36,6 +42,8 @@ WHERE dea.continent IS NOT NULL
 	AND dea.location NOT IN ('World', 'European Union', 'International') 
 ORDER BY 1, 2
 
+
+-- Window functions to find rolling totals of cases, deaths and vaccination numbers 
 SELECT
 	dea.location,
 	dea.date,
@@ -46,7 +54,9 @@ FROM covid_deaths dea
 JOIN covid_vaccinations vac
 	ON dea.location = vac.location
 	AND dea.date = vac.date
-
+	
+	
+-- Window function for rolling total of just vaccination numbers
 SELECT 
 	dea.location,
 	dea.date,
